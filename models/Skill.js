@@ -1,0 +1,1 @@
+const m=require('mongoose');module.exports=m.model('Skill',new m.Schema({name:String,level:String},{timestamps:true}));

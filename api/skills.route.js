@@ -1,0 +1,1 @@
+const r=require('express').Router();const c=require('../controllers/multi.controller');r.get('/',c.getAll('Skill'));r.post('/',c.create('Skill'));module.exports=r;

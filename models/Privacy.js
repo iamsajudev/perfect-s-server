@@ -1,0 +1,1 @@
+const m=require('mongoose');module.exports=m.model('Privacy',new m.Schema({content:String},{timestamps:true}));

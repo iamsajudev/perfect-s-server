@@ -1,0 +1,1 @@
+const m=require('mongoose');module.exports=m.model('Project',new m.Schema({title:String,desc:String,image:String,link:String},{timestamps:true}));

@@ -1,0 +1,1 @@
+const m=require('mongoose');module.exports=m.model('Contact',new m.Schema({name:String,email:String,message:String},{timestamps:true}));

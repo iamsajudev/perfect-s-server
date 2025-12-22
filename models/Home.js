@@ -1,0 +1,1 @@
+const m=require('mongoose');module.exports=m.model('Home',new m.Schema({title:String,subtitle:String,image:String},{timestamps:true}));

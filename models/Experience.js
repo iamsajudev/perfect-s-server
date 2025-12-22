@@ -1,0 +1,1 @@
+const m=require('mongoose');module.exports=m.model('Experience',new m.Schema({company:String,role:String,years:String},{timestamps:true}));
