@@ -1,1 +1,0 @@
-const r=require('express').Router();const c=require('../controllers/single.controller');r.get('/',c.getTerms);r.post('/',c.upsertTerms);r.put('/',c.upsertTerms);module.exports=r;

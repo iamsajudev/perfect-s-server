@@ -1,1 +1,0 @@
-const r=require('express').Router();const c=require('../controllers/single.controller');r.get('/',c.getHome);r.post('/',c.upsertHome);r.put('/',c.upsertHome);module.exports=r;
