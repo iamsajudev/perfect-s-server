@@ -1,5 +1,5 @@
 {
-  "name": "full-serverless-api",
+  "name": "portfolio-serverless-api",
   "version": "1.0.0",
   "description": "Serverless REST API for Portfolio using Node.js, Express, MongoDB & Cloudinary",
   "main": "index.js",
@@ -8,7 +8,12 @@
   },
   "scripts": {
     "dev": "nodemon server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "echo 'No build step required for Node.js'",
+    "vercel-dev": "vercel dev",
+    "vercel-deploy": "vercel --prod",
+    "test": "echo 'No tests configured' && exit 0",
+    "lint": "echo 'No linter configured'"
   },
   "dependencies": {
     "cloudinary": "^2.8.0",
@@ -27,8 +32,17 @@
     "express",
     "mongodb",
     "cloudinary",
-    "vercel"
+    "vercel",
+    "portfolio"
   ],
-  "author": "Your Name",
-  "license": "MIT"
+  "author": "Sazeduzzaman Saju",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sazeduzzaman/myPortfolioServer"
+  },
+  "bugs": {
+    "url": "https://github.com/sazeduzzaman/myPortfolioServer/issues"
+  },
+  "homepage": "https://github.com/sazeduzzaman/myPortfolioServer#readme"
 }
