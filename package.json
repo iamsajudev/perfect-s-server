@@ -1,12 +1,34 @@
-
 {
-"name":"full-serverless-api",
-"version":"1.0.0",
-"dependencies":{
- "express":"^4.18.2",
- "mongoose":"^8.0.0",
- "cors":"^2.8.5",
- "dotenv":"^16.3.1",
- "cloudinary":"^1.41.0"
-}
+  "name": "full-serverless-api",
+  "version": "1.0.0",
+  "description": "Serverless REST API for Portfolio using Node.js, Express, MongoDB & Cloudinary",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18 <=20"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cloudinary": "^2.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "keywords": [
+    "serverless",
+    "api",
+    "nodejs",
+    "express",
+    "mongodb",
+    "cloudinary",
+    "vercel"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
 }

@@ -41,3 +41,4 @@ uploads/
 
 # MongoDB dumps
 dump/
+.vercel
