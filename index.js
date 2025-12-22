@@ -1,14 +1,21 @@
-
 const express = require("express");
-const mongoose = require("mongoose");
+const connectDB = require("./utils/db"); // cached connection
 const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGO_URI);
+// Connect to MongoDB (cached for serverless)
+connectDB()
+  .then(() => console.log("✅ MongoDB connected"))
+  .catch((err) => {
+    console.error("❌ MongoDB connection error:", err.message);
+  });
+
 // Root route for quick info
 app.get("/", (req, res) => {
   res.send(`
@@ -40,15 +47,35 @@ app.get("/", (req, res) => {
   `);
 });
 
+// Single-document routes
 app.use("/api/home", require("./api/home.route"));
 app.use("/api/about", require("./api/about.route"));
 app.use("/api/privacy", require("./api/privacy.route"));
 app.use("/api/terms", require("./api/terms.route"));
 
+// Multi-document routes
 app.use("/api/projects", require("./api/projects.route"));
 app.use("/api/experience", require("./api/experience.route"));
 app.use("/api/blogs", require("./api/blogs.route"));
 app.use("/api/skills", require("./api/skills.route"));
 app.use("/api/contacts", require("./api/contact.route"));
 
-module.exports = app;
+// Health route (optional)
+app.get("/api", (_, res) => {
+  res.json({
+    message: "API is running",
+    endpoints: [
+      "/home",
+      "/about",
+      "/privacy",
+      "/terms",
+      "/projects",
+      "/experience",
+      "/blogs",
+      "/skills",
+      "/contacts",
+    ],
+  });
+});
+
+module.exports = app; // Export for Vercel serverless
